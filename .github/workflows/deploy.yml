@@ -20,12 +20,6 @@ jobs:
     - name: Checkout versions
       run: npm -v && node -v
 
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build
-      run: npm run build
-
     - name: Deploy to DigitalOcean
       uses: appleboy/ssh-action@master
       with:
