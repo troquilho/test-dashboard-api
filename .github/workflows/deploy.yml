@@ -18,8 +18,7 @@ jobs:
         node-version: '14'
 
     - name: Install dependencies
-      run: npm -v
-      run: node -v
+      run: npm -v && node -v
     # - name: Install dependencies
     #   run: npm ci
 
