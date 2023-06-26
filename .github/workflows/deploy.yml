@@ -19,8 +19,8 @@ jobs:
     
     - name: Print secret value
       run: |
-        echo "DIGITALOCEAN_HOST: ${{ secrets.DIGITALOCEAN_HOST }}"
-        echo "DIGITALOCEAN_USERNAME: ${{ secrets.DIGITALOCEAN_USERNAME }}"
+        echo "::set-output name=digitalocean_host::${{ secrets.DIGITALOCEAN_HOST }}"
+        echo "::set-output name=digitalocean_username::${{ secrets.DIGITALOCEAN_USERNAME }}"
 
     - name: Checkout versions
       run: npm -v && node -v
