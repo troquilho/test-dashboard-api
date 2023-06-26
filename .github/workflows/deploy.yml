@@ -16,6 +16,11 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '14'
+    
+    - name: Print secret value
+      run: |
+        echo "DIGITALOCEAN_HOST: ${{ secrets.DIGITALOCEAN_HOST }}"
+        echo "DIGITALOCEAN_USERNAME: ${{ secrets.DIGITALOCEAN_USERNAME }}"
 
     - name: Checkout versions
       run: npm -v && node -v
