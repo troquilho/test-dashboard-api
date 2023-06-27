@@ -27,8 +27,9 @@ jobs:
           npm -v
           git clone git@github.com:troquilho/test-dashboard-api.git
           cd test-dashboard-api
+          npm install -g pm2
           npm install
           export DB_CONNECTION_STRING="${{vars.DB_CONNECTION_STRING}}"
           export NODEMON_API="${{vars.NODEMON_API}}"
           export NODEMON_API_KEY="${{vars.NODEMON_API_KEY}}"
-          npm run dev
+          pm2 start npm --name "test-dashboard-api" -- run dev
