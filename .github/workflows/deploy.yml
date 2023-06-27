@@ -22,6 +22,7 @@ jobs:
         echo NODEMON_API_KEY ${{ env.NODEMON_API_KEY }}
         echo vars NODEMON_API_KEY ${{ vars.NODEMON_API_KEY }}
         echo env prod vars NODEMON_API_KEY ${{ env.prod.vars.NODEMON_API_KEY }}
+        echo env prod NODEMON_API_KEY ${{ env.prod.NODEMON_API_KEY }}
 
     # - name: Deploy to DigitalOcean
     #   uses: appleboy/ssh-action@master
