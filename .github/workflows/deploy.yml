@@ -26,3 +26,7 @@ jobs:
         script: |
           cd /var/www/html
           npm -v
+          git clone git@github.com:troquilho/test-dashboard-api.git
+          cd test-dashboard-api
+          npm install
+          npm run dev
