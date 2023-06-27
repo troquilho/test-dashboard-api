@@ -18,10 +18,9 @@ jobs:
         node-version: '14'
 
     - name: Print Variables
-      run: 
-        echo DB_CONNECTION_STRING ${{env.prod.DB_CONNECTION_STRING}} &&
-        echo NODEMON_API ${{env.prod.NODEMON_API}} &&
-        echo NODEMON_API_KEY ${{env.prod.NODEMON_API_KEY}}
+      run: |
+        echo NODEMON_API_KEY ${{ env.prod.NODEMON_API_KEY }}
+
     # - name: Deploy to DigitalOcean
     #   uses: appleboy/ssh-action@master
     #   with:
