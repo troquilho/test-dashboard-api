@@ -30,6 +30,7 @@ jobs:
         key: ${{secrets.SSH_PRIVATE_KEY}}
         script: |
           npm -v
+          echo ${DB_CONNECTION_STRING}
           echo ${{vars.DB_CONNECTION_STRING}}
           echo ${{vars.NODEMON_API}}
           echo ${{vars.NODEMON_API_KEY}}
