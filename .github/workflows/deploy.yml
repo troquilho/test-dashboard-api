@@ -19,7 +19,7 @@ jobs:
 
     - name: Print Variables
       run: |
-        echo NODEMON_API_KEY ${{ env.prod.NODEMON_API_KEY }}
+        echo NODEMON_API_KEY ${{ env.NODEMON_API_KEY }}
 
     # - name: Deploy to DigitalOcean
     #   uses: appleboy/ssh-action@master
