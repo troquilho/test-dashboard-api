@@ -1,4 +1,4 @@
-name: Deploy to DigitalOcean
+name: Tentativa de Deploy
 on:
   push:
     branches:
@@ -7,11 +7,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    env:
-      DB_CONNECTION_STRING: ${{vars.DB_CONNECTION_STRING}}
-      NODEMON_API: ${{vars.NODEMON_API}}
-      NODEMON_API_KEY: ${{vars.NODEMON_API_KEY}}
 
     steps:
     - name: Checkout repository
@@ -30,14 +25,10 @@ jobs:
         key: ${{secrets.SSH_PRIVATE_KEY}}
         script: |
           npm -v
-          echo "${DB_CONNECTION_STRING}"
-          echo ${{vars.DB_CONNECTION_STRING}}
-          echo ${{vars.NODEMON_API}}
-          echo ${{vars.NODEMON_API_KEY}}
-          # git clone git@github.com:troquilho/test-dashboard-api.git
-          # cd test-dashboard-api
-          # npm install
-          # export DB_CONNECTION_STRING="${DB_CONNECTION_STRING}"
-          # export NODEMON_API="${NODEMON_API}"
-          # export NODEMON_API_KEY="${NODEMON_API_KEY}"
-          # npm run dev
+          git clone git@github.com:troquilho/test-dashboard-api.git
+          cd test-dashboard-api
+          npm install
+          export DB_CONNECTION_STRING="${{vars.DB_CONNECTION_STRING}}"
+          export NODEMON_API="${{vars.NODEMON_API}}"
+          export NODEMON_API_KEY="${{vars.NODEMON_API_KEY}}"
+          npm run dev
