@@ -30,10 +30,13 @@ jobs:
         key: ${{secrets.SSH_PRIVATE_KEY}}
         script: |
           npm -v
-          git clone git@github.com:troquilho/test-dashboard-api.git
-          cd test-dashboard-api
-          npm install
-          export DB_CONNECTION_STRING="${DB_CONNECTION_STRING}"
-          export NODEMON_API="${NODEMON_API}"
-          export NODEMON_API_KEY="${NODEMON_API_KEY}"
-          npm run dev
+          echo ${{DB_CONNECTION_STRING}}
+          echo ${{NODEMON_API}}
+          echo ${{NODEMON_API_KEY}}
+          # git clone git@github.com:troquilho/test-dashboard-api.git
+          # cd test-dashboard-api
+          # npm install
+          # export DB_CONNECTION_STRING="${DB_CONNECTION_STRING}"
+          # export NODEMON_API="${NODEMON_API}"
+          # export NODEMON_API_KEY="${NODEMON_API_KEY}"
+          # npm run dev
