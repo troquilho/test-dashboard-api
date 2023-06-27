@@ -24,7 +24,6 @@ jobs:
         username: ${{ secrets.DIGITALOCEAN_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          cd /var/www/html
           npm -v
           git clone git@github.com:troquilho/test-dashboard-api.git
           cd test-dashboard-api
