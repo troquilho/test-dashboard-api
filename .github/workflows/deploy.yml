@@ -30,7 +30,7 @@ jobs:
           git pull
           npm install -g pm2
           npm install
-          export DB_CONNECTION_STRING="${{vars.DB_CONNECTION_STRING}}"
+          export DB_CONNECTION_STRING="${{secrets.DB_CONNECTION_STRING}}"
           export NODEMON_API="${{vars.NODEMON_API}}"
-          export NODEMON_API_KEY="${{vars.NODEMON_API_KEY}}"
+          export NODEMON_API_KEY="${{secrets.NODEMON_API_KEY}}"
           pm2 start npm -- run dev
